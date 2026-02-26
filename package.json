@@ -1,0 +1,17 @@
+{
+  "name": "speakmate",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w apps/server\" \"npm run dev -w apps/web\"",
+    "dev:web": "npm run dev -w apps/web",
+    "dev:server": "npm run dev -w apps/server",
+    "build": "npm run build -w apps/server && npm run build -w apps/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
